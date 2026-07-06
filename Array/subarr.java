@@ -14,7 +14,7 @@ public class subarr {
         }
         System.out.println();
 
-    }
+g    }
     System.out.println("total subarray ="+ts);
     }
     public static void main(String args[]){

@@ -1,0 +1,39 @@
+import java.util.*;
+public class maxsubarrkadanes {
+    public static void printmaxsubarrayssum(int numbers[]){
+        int currsum=0;
+        int maxsum=Integer.MIN_VALUE;
+
+        for(int i=0;i<numbers.length;i++){
+            int start=i;
+            for(int j=i;j<numbers.length;j++){
+                int end=j;
+                currsum=0;
+                for(int k=start;k<=end;k++){
+                  currsum+=numbers[k] ; 
+                }
+                System.out.println(currsum);
+                if(maxsum<currsum){
+                    maxsum=currsum;
+                }
+            }
+        }
+        System.out.println("max sum ="+ maxsum);
+    }
+    public static void kadanes(int numbers[]){
+        int ms=Integer.MIN_VALUE;
+        int cs=0;
+        for(int i=0;i<numbers.length;i++){
+            cs=cs+numbers[i];
+            if(cs<0){
+                cs=0;
+            }
+            ms= Math.max(cs,ms);
+        }
+        System.out.println("Our max subarray sum is :"+ms);
+        
+    }
+    public static void main(String[] args) {
+        int numbers[]={-2,-3,4,-1,-2,1,5,-3};
+kadanes(numbers);    }
+}
